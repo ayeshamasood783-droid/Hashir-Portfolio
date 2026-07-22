@@ -318,3 +318,29 @@
   }
 
 })();
+
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contactForm');
+    var successDiv = document.getElementById('formSuccess');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show success message
+        if (successDiv) {
+          successDiv.style.display = 'block';
+        }
+        
+        // Hide form
+        form.querySelectorAll('.form-group, .btn-submit').forEach(function(el) {
+          el.style.display = 'none';
+        });
+        
+        // Actually submit the form to Netlify
+        setTimeout(function() {
+          form.submit();
+        }, 100);
+      });
+    }
+  });
