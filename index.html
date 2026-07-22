@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hashir Ahmad · Video Editor</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="#home" class="logo">Hashir<span>Ahmad</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn-hire">Hire Me</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">🎥 Video Editor</div>
+          <h1>
+            <span class="highlight">LET'S MAKE</span><br />YOUR VIDEO LOOKS<br /><span
+              class="highlight"
+              >MORE COOL</span
+            >
+          </h1>
+          <p class="sub-text">
+            I turn raw footage into cinematic stories that captivate, engage,
+            and leave a lasting impression.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary"
+              ><i class="fas fa-paper-plane"></i> Hire Me</a
+            >
+            <a href="#work" class="btn btn-outline"
+              ><i class="fas fa-play"></i> View Work</a
+            >
+          </div>
+          <div class="hero-social">
+            <a
+              href="https://www.linkedin.com/in/hashir-ahmad-b78a2a266?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              title="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/923423472596"
+              target="_blank"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/hashir_ahmadd?igsh=MXh6dWV6aHFhbHdmMA=="
+              title="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-img">
+            <img
+              src="profile.jpg"
+              alt="Hashir Ahmad"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <div class="profile-img">
+              <img
+                src="profile.jpg"
+                alt="Hashir Ahmad"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+          </div>
+          <div class="about-content">
+            <div class="section-header"><h2>About Me</h2></div>
+            <p>
+              I'm <strong>Hashir Ahmad</strong>, a passionate
+              <strong>Video Editor</strong> with a deep love for storytelling
+              through visuals. I specialize in creating
+              <strong
+                >cinematic reels, Instagram content, and short-form
+                videos</strong
+              >
+              that help brands and creators stand out.
+            </p>
+            <p>
+              With a keen eye for detail and a commitment to quality, I
+              transform raw footage into compelling narratives that resonate
+              with audiences.
+            </p>
+            <p>
+              My goal is simple:
+              <strong>make your content unforgettable</strong>.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <span class="stat-number">15+</span
+                ><span class="stat-label">Projects Done</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">20+</span
+                ><span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recent Work</h2>
+          <p>A collection of cinematic edits, reels, and creative projects.</p>
+        </div>
+        <div class="work-wrapper">
+          <button class="scroll-btn scroll-left" onclick="scrollWork('left')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="work-scroll" id="workScroll"></div>
+          <button class="scroll-btn scroll-right" onclick="scrollWork('right')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <!-- ===== LIGHTBOX ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeLightbox()">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="screenpal-player-wrapper">
+          <iframe
+            id="lightboxVideo"
+            src=""
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen
+            allow="autoplay; encrypted-media; fullscreen"
+          ></iframe>
+        </div>
+
+        <!-- Video Info -->
+        <div class="lightbox-info" id="lightboxInfo">
+          <h3 id="videoTitle">Video Title</h3>
+          <p id="videoCategory">Category</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <div class="experience-grid">
+          <div class="experience-left">
+            <h2>My <span>Skills</span></h2>
+            <p>
+              I bring a diverse skill set to every project, ensuring
+              high-quality results that meet your creative vision.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">🎬 Video Editing</span>
+              <span class="skill-tag">🎨 Manipulation</span>
+              <span class="skill-tag">📦 Assembly</span>
+              <span class="skill-tag">📈 Upscaling</span>
+              <span class="skill-tag">✨ Enhancement</span>
+            </div>
+          </div>
+          <div class="experience-right">
+            <div class="exp-icon"><i class="fas fa-film"></i></div>
+            <div
+              class="glow-particle"
+              style="
+                top: 15%;
+                left: 10%;
+                width: 12px;
+                height: 12px;
+                filter: blur(16px);
+              "
+            ></div>
+            <div
+              class="glow-particle"
+              style="
+                bottom: 20%;
+                right: 12%;
+                width: 10px;
+                height: 10px;
+                filter: blur(14px);
+              "
+            ></div>
+            <div class="counter" id="counterDisplay">0</div>
+            <div class="counter-label">Years of Experience</div>
+            <p class="counter-text">
+              With over <strong>5+ years</strong> of professional video editing,
+              I've crafted cinematic reels, Instagram content, short films, and
+              brand stories that resonate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOOLS ===== -->
+    <section class="tools-section" id="tools">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tools &amp; Technologies</h2>
+          <p>
+            Industry‑standard software I master to bring your vision to life.
+          </p>
+        </div>
+        <div class="tools-grid" id="toolsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Let's Work Together</h2>
+          <p>Have a project in mind? Let's bring your vision to life.</p>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Get in <span>Touch</span></h3>
+            <p>
+              I'm always open to new projects and collaborations. Feel free to
+              reach out!
+            </p>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i
+              ><a href="mailto:hashirahmad737@gmail.com"
+                >hashirahmad737@gmail.com</a
+              >
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone"></i
+              ><a href="tel:+923423472596">+92 342 3472596</a>
+            </div>
+            <div class="contact-social">
+              <a
+                href="https://www.linkedin.com/in/hashir-ahmad-b78a2a266?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                title="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://wa.me/923423472596"
+                target="_blank"
+                title="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/hashir_ahmadd?igsh=MXh6dWV6aHFhbHdmMA=="
+                title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <!-- NETLIFY FORM -->
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you.html"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden" style="display: none">
+                <label
+                  >Don’t fill this out if you’re human: <input name="bot-field"
+                /></label>
+              </p>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            Hashir<span
+              style="
+                background: linear-gradient(135deg, #3d0000, #ff0040, #ff2d4a);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              "
+              >Ahmad</span
+            >
+            <small>VIDEO EDITOR · STORYTELLER</small>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="footer-social">
+            <a
+              href="https://www.linkedin.com/in/hashir-ahmad-b78a2a266?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              title="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://wa.me/923423472596"
+              target="_blank"
+              title="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/hashir_ahmadd?igsh=MXh6dWV6aHFhbHdmMA=="
+              title="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#experience">Experience</a>
+            <a href="#tools">Tools</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-copy">
+            &copy; 2026 <span class="highlight">Hashir Ahmad</span>. All rights
+            reserved. Made with <span class="heart">♥</span> &amp; cinematic
+            passion.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
